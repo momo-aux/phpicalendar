@@ -340,7 +340,8 @@ function openevent($event_date, $time, $uid, $arr, $lines = 0, $length = 0, $lin
 		} else {
 			$return .= '<a'.$link_class.' title="'.$title.'" href="'.$res[1].'">';
 		}
-		$return .= $pre_text.$event_text.$post_text.'</a>'."\n";
+		$location = "<br><p>" . chopToWordCount(sanitizeForWeb(urldecode($arr['location'])), 20);
+		$return .= $pre_text.$event_text.$location.$post_text.'</a>'."\n";
 	}
 
 	return $return;
